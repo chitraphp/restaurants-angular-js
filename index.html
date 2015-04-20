@@ -16,7 +16,7 @@
                 <h4>Search Restaurants</h4>
                 <form class="form-inline" role="form">
                     <div class="form-group">
-                        <input ng-model="searchByRestaurant" type="text" class="form-control" placeholder="Search">
+                        <input ng-model="searchByName" type="text" class="form-control" placeholder="Search">
                     </div>
                 </form>
             </div>
@@ -27,14 +27,10 @@
             <h2 ng-show="restaurants.length && filtered.length">Restaurant List</h2>
             <h2 ng-show="restaurants.length && !filtered.length">No Matches</h2>
                 <ul>
-                    <li ng-repeat="item in filtered = (restaurants | orderBy:'cuisine' | filter:{name:searchByRestaurant})" >
-                        <!-- //ng-repeat="item in filtered = (restaurants | filter:query)" -->
+                    <li ng-repeat="item in filtered = (restaurants | orderBy:'cuisine' | filter:{name:searchByName})" >
                         <span ng-click="editing = true" ng-hide='editing' >
                         {{item.name}} <a ng-click="deleteRestaurant(item)">Delete</a>
                             <ul>
-                            <!-- <li ng-repeat="item in filtered = (restaurants | filter:query)">{{item.location}}</li>
-                            <li ng-repeat="item in filtered = (restaurants | filter:query)">{{item.cuisine}}</li>
-                            <li ng-repeat="item in filtered = (restaurants | filter:query)">{{item.price}}</li> -->
                             <li> {{item.location}}</li>
                             <li> {{item.cuisine}}</li>
                             <li> {{item.price}}</li>

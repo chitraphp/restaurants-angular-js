@@ -1,5 +1,6 @@
 bestRestaurants.controller('RestaurantsCtrl', function RestaurantsCtrl($scope) {
   $scope.restaurants = [];
+
   $scope.addRestaurant = function(){
       $scope.restaurants.push({ name:$scope.restaurantName, location:$scope.restaurantLocation, cuisine: $scope.restaurantCuisine, price: $scope.restaurantPrice });
       $scope.restaurantName = null;
@@ -14,14 +15,13 @@ bestRestaurants.controller('RestaurantsCtrl', function RestaurantsCtrl($scope) {
 
   };
 
-  $scope.searchByRestaurant = function(string){
-      if( string === $scope.restaurants.name){
-
-          return $scope.restaurants.name;
-      }
-
-
-
-  };
+  // $scope.searchByName = function(string){
+  //     if( string === $scope.searchByName){
+  //         return $scope.restaurants.name;
+  //     }
+  //
+  //
+  //
+  // };
 
 });
